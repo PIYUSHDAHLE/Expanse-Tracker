@@ -12,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     const res = await axios.post("/auth/login", form);
     localStorage.setItem("token", res.data.token);
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
