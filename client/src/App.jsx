@@ -5,7 +5,8 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Hero from "./pages/Hero"; 
 import Navbar from "./components/Navbar";
-
+import Profile from "./pages/Profile";
+import Common from "./pages/Common";
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -21,13 +22,22 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/common" element={<Common />} />
 
-        {/* Protected Route */}
+        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           }
         />
@@ -37,4 +47,3 @@ function App() {
 }
 
 export default App;
-
