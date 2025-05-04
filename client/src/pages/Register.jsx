@@ -15,14 +15,48 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-xl font-semibold mb-4">Register</h2>
-        <input className="w-full mb-2 p-2 border" type="text" name="name" placeholder="Name" onChange={handleChange} />
-        <input className="w-full mb-2 p-2 border" type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <input className="w-full mb-2 p-2 border" type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <button className="w-full bg-blue-600 text-white py-2 rounded">Register</button>
-      </form>
+    <div className="flex h-screen">
+      <div
+        className="w-1/2 bg-cover bg-center"
+        style={{ backgroundImage: "url('/register-bg.jpg')" }}
+      >
+        <div className="h-full w-full bg-black bg-opacity-60"></div>
+      </div>
+      <div className="w-1/2 flex justify-center items-center">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-gray-900 bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md text-white"
+        >
+          <h2 className="text-3xl font-bold mb-6 text-center">Register</h2>
+          <input
+            className="w-full mb-4 p-3 rounded border border-gray-700 bg-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            name="name"
+            placeholder="Name"
+            onChange={handleChange}
+            required
+          />
+          <input
+            className="w-full mb-4 p-3 rounded border border-gray-700 bg-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            required
+          />
+          <input
+            className="w-full mb-6 p-3 rounded border border-gray-700 bg-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+            required
+          />
+          <button className="w-full bg-blue-600 hover:bg-blue-700 transition-colors text-white py-3 rounded font-semibold">
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -16,12 +16,35 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-xl font-semibold mb-4">Login</h2>
-        <input className="w-full mb-2 p-2 border" type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <input className="w-full mb-2 p-2 border" type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <button className="w-full bg-green-600 text-white py-2 rounded">Login</button>
+    <div
+      className="flex justify-center items-center h-screen relative bg-cover bg-center"
+      style={{ backgroundImage: "url('/login-bg.jpg')" }}
+    >
+      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <form
+        onSubmit={handleSubmit}
+        className="relative bg-gray-900 bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-sm z-10"
+      >
+        <h2 className="text-3xl font-bold mb-6 text-white text-center">Login</h2>
+        <input
+          className="w-full mb-4 p-3 rounded border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+          required
+        />
+        <input
+          className="w-full mb-6 p-3 rounded border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+          required
+        />
+        <button className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white py-3 rounded font-semibold">
+          Login
+        </button>
       </form>
     </div>
   );
