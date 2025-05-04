@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "../utils/axios";
 import { useNavigate } from "react-router-dom";
+import img from "../assets/reg.webp";
 
 export default function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -17,10 +18,10 @@ export default function Register() {
   return (
     <div className="flex h-screen">
       <div
-        className="w-1/2 bg-cover bg-center"
-        style={{ backgroundImage: "url('/register-bg.jpg')" }}
+        className="w-1/2 bg-cover bg-center object-contain"
+        style={{ backgroundImage: `url(${img})` }}
       >
-        <div className="h-full w-full bg-black bg-opacity-60"></div>
+        <div className="h-full w-full  bg-opacity-60"></div>
       </div>
       <div className="w-1/2 flex justify-center items-center">
         <form

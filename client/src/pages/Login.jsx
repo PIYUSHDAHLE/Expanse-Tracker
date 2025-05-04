@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "../utils/axios";
 import { useNavigate } from "react-router-dom";
+import img from "../assets/login-img.jpeg";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -18,7 +19,7 @@ export default function Login() {
   return (
     <div
       className="flex justify-center items-center h-screen relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/login-bg.jpg')" }}
+      style={{ backgroundImage: `url(${img})` }}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <form
